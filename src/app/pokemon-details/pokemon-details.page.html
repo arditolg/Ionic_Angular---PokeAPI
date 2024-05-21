@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+        <span>Back to Home</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ pokemon?.name | titlecase }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="pokemon-details">
+    <div class="image-section">
+      <img [src]="pokemon?.image" alt="{{ pokemon?.name }}" class="pokemon-image" />
+      <h2>{{ pokemon?.name | titlecase }}</h2>
+    </div>
+
+    <div class="details-grid">
+      <div class="details-section">
+        <h3>Abilities</h3>
+        <ul>
+          <li *ngFor="let ability of abilities">{{ ability | titlecase }}</li>
+        </ul>
+      </div>
+
+      <div class="details-section">
+        <h3>Weight</h3>
+        <p>{{ weight }} hectograms</p>
+      </div>
+
+      <div class="details-section">
+        <h3>Types</h3>
+        <ul>
+          <li *ngFor="let type of types">{{ type | titlecase }}</li>
+        </ul>
+      </div>
+
+      <div class="details-section">
+        <h3>Stats</h3>
+        <ul>
+          <li *ngFor="let stat of stats">{{ stat.name | titlecase }}: {{ stat.base_stat }}</li>
+        </ul>
+      </div>
+
+      <div class="details-section">
+        <h3>Species</h3>
+        <p>{{ species | titlecase }}</p>
+      </div>
+
+      <div class="details-section">
+        <h3>Moves</h3>
+        <ul>
+          <li *ngFor="let move of moves">{{ move | titlecase }}</li>
+        </ul>
+      </div>
+
+      <div class="details-section">
+        <h3>Held Items</h3>
+        <ul>
+          <li *ngFor="let item of heldItems">{{ item | titlecase }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <ion-footer>
+    <ion-toolbar>
+      
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

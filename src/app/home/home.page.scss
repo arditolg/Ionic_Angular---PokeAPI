@@ -25,3 +25,33 @@
 #container a {
   text-decoration: none;
 }
+
+.pokemon-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.pokemon-image {
+  width: 100px;  /* Ajuste conforme necessário */
+  height: 100px; /* Ajuste conforme necessário */
+  margin-bottom: 10px;
+}
+
+.pokemon-name {
+  text-transform: capitalize;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+ion-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+ion-button {
+  margin-top: 10px;
+}
